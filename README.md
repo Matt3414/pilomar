@@ -12,7 +12,8 @@ The wiki for pi-lomar is here.
 [https://github.com/Short-bus/pilomar/wiki]
 
 Made Compatible with XIAO RP2040, CHDKptp instead of Pi cam,
-"Adafruit Perma-Proto HAT - With EEPROM", and custom 1:60 worm gearbox.
+"Adafruit Perma-Proto HAT for Pi Mini Kit - 
+With EEPROM", and custom 1:60 worm gearbox.
 
 ### Todo
 - [x] Create fork
