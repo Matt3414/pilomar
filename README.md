@@ -13,7 +13,7 @@ The wiki for pi-lomar is here.
 
 Made Compatible with XIAO RP2040, CHDKptp instead of Pi cam,
 "Adafruit Perma-Proto HAT for Pi Mini Kit - 
-With EEPROM", and custom 1:60 worm gearbox.
+With EEPROM", and custom 60:1 worm gearbox.
 
 ### Todo
 - [x] Create fork
