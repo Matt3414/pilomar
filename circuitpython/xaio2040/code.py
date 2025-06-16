@@ -138,9 +138,9 @@ class statusled():
     """ Pimoroni Tiny2040 version of RGB LED handling.
         The RGB LED is a collection of three led() objects. """
     def __init__(self):
-        self.LedR = led(board.LED_R) # Create LED for RED channel.
-        self.LedG = led(board.LED_G) # Create LED for GREEN channel.
-        self.LedB = led(board.LED_B) # Create LED for BLUE channel.
+        self.LedR = led(board.LED_RED) # Create LED for RED channel.
+        self.LedG = led(board.LED_GREEN) # Create LED for GREEN channel.
+        self.LedB = led(board.LED_BLUE) # Create LED for BLUE channel.
         self.TaskList = {'idle': (False,False,False), # Off
                          'coms': (False,False,True), # Blue - Flashes when handling UART
                          'move': (False,True,False), # green - Flashes when motor is moving.
