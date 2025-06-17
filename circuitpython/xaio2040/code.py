@@ -1638,15 +1638,17 @@ class steppermotor():
             self.StatusTimer.Reset() # We've sent the regular status message, decide when the next is due.
 
 # Define pins for motorcontroller chips.
-AzimuthStepBCM = GPIOpin(board.GP29,'azstep') # Tiny RP2040
-AltitudeStepBCM = GPIOpin(board.GP28,'altstep') # Tiny RP2040
-CommonDirectionBCM = GPIOpin(board.GP27,'dir') # Tiny RP2040
-CommonMode0BCM = GPIOpin(board.GP3,'mode0') # Tiny RP2040
-CommonMode1BCM = GPIOpin(board.GP4,'mode1') # Tiny RP2040
-CommonMode2BCM = GPIOpin(board.GP5,'mode2') # Tiny RP2040
-CommonEnableBCM = GPIOpin(board.GP2,'enable') # Tiny RP2040
-AzimuthFaultBCM = GPIOpin(board.GP6,'azfault') # Tiny RP2040
-AltitudeFaultBCM = GPIOpin(board.GP7,'altfault') # Tiny RP2040
+# Available pins: D0 - D10; Arranged CCW Around the board, starting from the top left, when the USB-C port is at the top.
+# D6 & D7 are being used as RX and TX, leaving 9 pins, Meaning all pins of the Xiao are used up.
+AzimuthStepBCM = GPIOpin(board.GP29,'azstep') # Xiao RP2040
+AltitudeStepBCM = GPIOpin(board.GP28,'altstep') # Xiao RP2040
+CommonDirectionBCM = GPIOpin(board.GP27,'dir') # Xiao RP2040
+CommonMode0BCM = GPIOpin(board.GP3,'mode0') # Xiao RP2040
+CommonMode1BCM = GPIOpin(board.GP4,'mode1') # Xiao RP2040
+CommonMode2BCM = GPIOpin(board.GP5,'mode2') # Xiao RP2040
+CommonEnableBCM = GPIOpin(board.GP2,'enable') # Xiao RP2040
+AzimuthFaultBCM = GPIOpin(board.GP6,'azfault') # Xiao RP2040
+AltitudeFaultBCM = GPIOpin(board.GP7,'altfault') # Xiao RP2040
 
 AzimuthStepBCM.SetDirection(digitalio.Direction.OUTPUT)
 AzimuthStepBCM.SetValue(False)
