@@ -964,7 +964,7 @@ class parameters(attributemaster): # Common
         # MctlResetPin controls power OR reset signal to microcontroller.
         # On 1st generation boards it is GP4.
         # On later boards it is GP23 because GP4 is now available for the Arducam HiQuality camera with switchable IR Cutoff filter.
-        self.MctlResetPin = self.GetParmVal('MctlResetPin',4) # Which RPi4 GPIO pin is used to RESET the microcontroller? On first gen boards.
+        self.MctlResetPin = self.GetParmVal('MctlResetPin',6) # Which RPi4 GPIO pin is used to RESET the microcontroller? On first gen boards.
         self.UartRxQueueLimit = self.GetParmVal('UartRxQueueLimit',50) # How many messages can be held in the input queue from the Microcontroller? Kill older entries.
         # Azimuth motor parameters.
         self.MinAzimuthAngle = self.GetParmVal('MinAzimuthAngle',0)
