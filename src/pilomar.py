@@ -2620,7 +2620,7 @@ class microcontroller(attributemaster):
         """ List serial ports to log file and terminal. """
         self.ListSerialPorts(terminal=True)
         
-    def __init__(self,port='/dev/serial0',resetpin=4,boardtype=None,logger=None):
+    def __init__(self,port='/dev/serial0',resetpin=6,boardtype=None,logger=None):
         """ 
             port = serial port to use for UART communication. 
             resetpin = pin used to control reset or power for the microcontroller. 
