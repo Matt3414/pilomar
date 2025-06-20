@@ -421,8 +421,8 @@ class uarthost():
         print(dir(board))
         if name == None: name = 'UART' + str(channel) # Default to useful name.
         if channel == 0: # UART0
-            self.uart = busio_UART(board.GP0,board.GP1,baudrate=115200,receiver_buffer_size=1024,timeout=0) # Define UART0 as the serial comms channel to the host.
-            print ('UART TX=', board.GP0, 'UART RX=', board.GP1)
+            self.uart = busio_UART(board.D6,board.D7,baudrate=115200,receiver_buffer_size=1024,timeout=0) # Define UART0 as the serial comms channel to the host.
+            print ('UART TX=', board.D6, 'UART RX=', board.D7)
         else: # UART1
             raise Exception('uarthost on Tiny2040 not configued for UART channel 1. Use channel 0 only.')
             # Don't increment exception count because we quit here. No communication can be established if this fails.
