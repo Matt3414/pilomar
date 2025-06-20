@@ -20,8 +20,8 @@ With EEPROM", and custom 60:1 worm gearbox.
 - [x] Change pins used in code
   - [x] Raspberry Pi 4
   - [x] Seeed Studio XIAO RP2040
-- [ ] Change pico code to use XIAO RP2040's RGB led's names
-- [ ] Change pico code to use 60:1 gear ratio instead of 240:1 (12000 steps per revolution vs 96000)
+- [x] Change pico code to use XIAO RP2040's RGB led's names
+- [x] Change pico code to use 60:1 gear ratio instead of 240:1 (12000 steps per revolution vs 96000)
 - [ ] Disable Pi camera from being requiered to be pluged in so i can use an external camera.
 - [ ] Use Pio cores on RP2040 to interface with neopixel/Stepper Motors if more efficient
 - [ ] Program EEPROM on HAT
