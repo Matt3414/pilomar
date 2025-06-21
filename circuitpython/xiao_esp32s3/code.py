@@ -138,9 +138,9 @@ class statusled():
     """ Pimoroni Tiny2040 version of RGB LED handling.
         The RGB LED is a collection of three led() objects. """
     def __init__(self):
-        self.LedR = led(board.LED_RED) # Create LED for RED channel.
+        """self.LedR = led(board.LED_RED) # Create LED for RED channel.
         self.LedG = led(board.LED_GREEN) # Create LED for GREEN channel.
-        self.LedB = led(board.LED_BLUE) # Create LED for BLUE channel.
+        self.LedB = led(board.LED_BLUE) # Create LED for BLUE channel. """
         self.TaskList = {'idle': (False,False,False), # Off
                          'coms': (False,False,True), # Blue - Flashes when handling UART
                          'move': (False,True,False), # green - Flashes when motor is moving.
@@ -170,7 +170,7 @@ class statusled():
         elif self.Enabled or task == ErrorTask: # No current ERROR status, so we can consider whether to set the new status.
             if task == ErrorTask: # Setting a new error status. Set the timeout for 1 second ahead.
                 self.StatusExpiry = ms + 1 # Set 1 second expiry on error codes.
-            if task in self.TaskList: # Pull the color codes for the selected task.
+            """if task in self.TaskList: # Pull the color codes for the selected task.
                 t = self.TaskList[task]
                 if t[0]: self.LedR.On()
                 else: self.LedR.Off()
@@ -185,7 +185,7 @@ class statusled():
         else: # LED is disabled for everything except ERRORS
             self.LedR.Off()
             self.LedG.Off()
-            self.LedB.Off()
+            self.LedB.Off()"""
             
     def SetRGB(self,line):
         """ Receive a 'set rgb' command from the RPi and turn on 
@@ -204,14 +204,14 @@ class statusled():
             6 = nnn = Minimum seconds to illuminate. """
         lineitems = line.split(' ')
         lli = len(lineitems)
-        if lli > 3 and lineitems[3] == 'y': self.LedR.On()
+        """if lli > 3 and lineitems[3] == 'y': self.LedR.On()
         else: self.LedR.Off()
         if lli > 4 and lineitems[4] == 'y': self.LedG.On()
         else: self.LedG.Off()
         if lli > 5 and lineitems[5] == 'y': self.LedB.On()
         else: self.LedB.Off()
         if lli > 6: 
-            self.StatusExpiry = int(time.monotonic_ns() / 1000000000) + int(lineitems[6]) # Set expiry on the LED color.
+            self.StatusExpiry = int(time.monotonic_ns() / 1000000000) + int(lineitems[6]) # Set expiry on the LED color."""
 
 StatusLed = statusled()
 StatusLed.Task('init') # System is initializing...
