@@ -950,7 +950,7 @@ class parameters(attributemaster): # Common
         self.ColorScheme = self.GetParmVal('ColorScheme','green') # What colour scheme to use? (green, blue, red, white)
         
         # The following parameters control hardware features.
-        self.CameraEnabled = self.GetParmVal('CameraEnabled',True) # Is the camera on?
+        self.CameraEnabled = self.GetParmVal('CameraEnabled',False) # Is the camera on?
         self.BacklashEnabled = self.GetParmVal('BacklashEnabled',False) # ENABLE to let the motors make extra moves to cope with gear backlash.
         self.FaultSensitive = self.GetParmVal('FaultSensitive',False) # ENABLE to make motorcontroller respect the DRV8825 'fault' signal.
         self.MctlLedStatus = self.GetParmVal('MctlLedStatus',True) # Turn on STATUS LEDs on microcontroller.
@@ -970,8 +970,8 @@ class parameters(attributemaster): # Common
         self.MinAzimuthAngle = self.GetParmVal('MinAzimuthAngle',0)
         self.MaxAzimuthAngle = min(self.GetParmVal('MaxAzimuthAngle',360),360)
         self.AzimuthDriver = self.GetParmVal('AzimuthDriver','drv8825') # Which steppermotor driver does the Azimuth motor use?
-        self.AzimuthGearRatio = self.GetParmVal('AzimuthGearRatio',240)
-        self.AzimuthMotorStepsPerRev = self.GetParmVal('AzimuthMotorStepsPerRev',400) # Full step count for the motor (ignore any microstepping multiplier)
+        self.AzimuthGearRatio = self.GetParmVal('AzimuthGearRatio',60)
+        self.AzimuthMotorStepsPerRev = self.GetParmVal('AzimuthMotorStepsPerRev',200) # Full step count for the motor (ignore any microstepping multiplier)
         self.AzimuthSlewMicrostepRatio = self.GetParmVal('AzimuthSlewMicrostepRatio',1) # 1 = Full steps, 2 = 1/2 steps, 4 = 1/4 steps.
         self.AzimuthMicrostepRatio = self.GetParmVal('AzimuthMicrostepRatio',1) # 1 = Full steps, 2 = 1/2 steps, 4 = 1/4 steps.
         self.AzimuthRestAngle = self.GetParmVal('AzimuthRestAngle',180.0)
@@ -982,8 +982,8 @@ class parameters(attributemaster): # Common
         self.MinAltitudeAngle = self.GetParmVal('MinAltitudeAngle',0) # Fixed Issue #38
         self.MaxAltitudeAngle = min(self.GetParmVal('MaxAltitudeAngle',90),90) # Fixed Issue #38
         self.AltitudeDriver = self.GetParmVal('AltitudeDriver','drv8825') # Which steppermotor driver does the Altitude motor use?
-        self.AltitudeGearRatio = self.GetParmVal('AltitudeGearRatio',240)
-        self.AltitudeMotorStepsPerRev = self.GetParmVal('AltitudeMotorStepsPerRev',400) # Full step count for the motor (ignore any microstepping multiplier)
+        self.AltitudeGearRatio = self.GetParmVal('AltitudeGearRatio',60)
+        self.AltitudeMotorStepsPerRev = self.GetParmVal('AltitudeMotorStepsPerRev',200) # Full step count for the motor (ignore any microstepping multiplier)
         self.AltitudeMicrostepRatio = self.GetParmVal('AltitudeMicrostepRatio',1) # 1 = Full steps, 2 = 1/2 steps, 4 = 1/4 steps.
         self.AltitudeSlewMicrostepRatio = self.GetParmVal('AltitudeSlewMicrostepRatio',1) # 1 = Full steps, 2 = 1/2 steps, 4 = 1/4 steps.
         self.AltitudeRestAngle = self.GetParmVal('AltitudeRestAngle',0.0)
