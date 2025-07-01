@@ -3724,7 +3724,7 @@ class motorcontrol(attributemaster):
         """ Send configuration information from this motor image to the microcontroller
             where it will be loaded into the motor control there. 
                     
-            configure motor 20231016085541 azimuth 130.492 0 360 0.0 -1 0.001 0.05 0.003 10 n  n 90.0 240 400  1 180.0 nnn n nnn n
+            configure motor 20231016085541 azimuth 130.492 0 360 0.0 -1 0.001 0.05 0.003 10 n  n 90.0 60 200  1 180.0 nnn n nnn n
                 0       1         2           3       4    5  6   7  8   9     10    11  12 13 14 15   16 17  18 19    20  21 22 23
                 
                  2 = UTC timestamp when message sent.
@@ -3939,8 +3939,8 @@ class motorcontrol(attributemaster):
 
 # Create and initialize motor instances.
 AzimuthControl = motorcontrol('azimuth',
-                              gearratio=Parameters.AzimuthGearRatio, # 240 # Gearing of the drive system ignoring motor steps.
-                              fullstepsperrev=Parameters.AzimuthMotorStepsPerRev, # 400 # FullStep count of the motor before microstepping added.
+                              gearratio=Parameters.AzimuthGearRatio, # 60 # Gearing of the drive system ignoring motor steps.
+                              fullstepsperrev=Parameters.AzimuthMotorStepsPerRev, # 200 # FullStep count of the motor before microstepping added.
                               microstepratio=Parameters.AzimuthMicrostepRatio, # 1 # Level of microstepping to be added for observations. 1 = Full steps, 2 = 1/2 steps, 4 = 1/4 steps etc.
                               minangle=Parameters.MinAzimuthAngle, # 0 - Physical minimum angle motor will move to. 
                               maxangle=Parameters.MaxAzimuthAngle, # 360 - Physical maximum angle motor will move to.
@@ -3957,8 +3957,8 @@ AzimuthControl = motorcontrol('azimuth',
                               optimisemoves=Parameters.OptimiseMoves, # Can motor move freely across the 0-360 limit to keep tracking targets?
                               logger=MainLog)
 AltitudeControl = motorcontrol('altitude',
-                              gearratio=Parameters.AltitudeGearRatio, # 240,
-                              fullstepsperrev=Parameters.AltitudeMotorStepsPerRev, # 400 # FullStep count of the motor before microstepping added.
+                              gearratio=Parameters.AltitudeGearRatio, # 60,
+                              fullstepsperrev=Parameters.AltitudeMotorStepsPerRev, # 200 # FullStep count of the motor before microstepping added.
                               microstepratio=Parameters.AltitudeMicrostepRatio, # 1 # Level of microstepping to be added for observations. 1 = Full steps, 2 = 1/2 steps, 4 = 1/4 steps etc.
                               minangle=Parameters.MinAltitudeAngle, # 0 - Physical minimum angle motor will move to.
                               maxangle=Parameters.MaxAltitudeAngle, # 90 - Physical maximum angle motor will move to.
