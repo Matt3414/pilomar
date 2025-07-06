@@ -2745,7 +2745,7 @@ class microcontroller(attributemaster):
         authority = AskYesNo("No safety checks. Do you want to turn ON GPIO power for the microcontroller [y/N]?",False,fg=textcolor.BLACK,bg=textcolor.ORANGERED1)
         if authority:
             self.Log("microcontroller.PowerOn(): No safety checks. GPIO POWER PIN turned on for Microcontroller.",terminal=True)
-            self.ResetPin.On()
+            self.ResetPin.Off()
 
     def PowerOff(self):
         """ Overrides all safeties, turns power GPIO power pin off for microcontroller. """
@@ -2756,13 +2756,13 @@ class microcontroller(attributemaster):
         if authority:
             self.Log("microcontroller.PowerOff(): No safety checks. GPIO POWER PIN turned off for Microcontroller.",terminal=True)
             self.Log("microcontroller.PowerOff(): Note: If the messagehandler is still running, it will restart the microcontroller automatically.",terminal=True)
-            self.ResetPin.Off()
+            self.ResetPin.On()
 
     def PowerIsOn(self):
         """ Return TRUE if power is on, FALSE otherwise. 
             This uses GPIO.input(self.ResetBCM) even though the pin is defined as an output,
             it still works and returns the state of the pin. """
-        return self.ResetPin.State
+        return not self.ResetPin.State
 
     def SendManualCommand(self):
         """ Prompt the user for a manual command to send to the microcontroller. 
