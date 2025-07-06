@@ -945,7 +945,7 @@ class parameters(attributemaster): # Common
         self.StepperDriverData = self.GetParmVal('StepperDriverData',sdd) # Dictionary containing stepper driver types and parameters.
         self.BoardType = self.GetParmVal('BoardType',None) # Define alternative motorcontroller board type here. Changes behaviour of board/microcontroller.
         self.BatchSize = self.GetParmVal('BatchSize',100) # How many photos to take in a batch.
-        self.UARTOverride = self.GetParmVal('UARTOverride',None) # If set, this contains the UART device string to use for opening UART comms (eg '/dev/ttyAMA0'. If None, the software chooses.
+        self.UARTOverride = self.GetParmVal('UARTOverride','/dev/ttyS0') # If set, this contains the UART device string to use for opening UART comms (eg '/dev/ttyAMA0'. If None, the software chooses.
         self.ControlBatchSize = self.GetParmVal('ControlBatchSize',20) # How many images to capture in each 'control set' (DARK, BIAS etc). High values offer limited gains.
         self.ColorScheme = self.GetParmVal('ColorScheme','green') # What colour scheme to use? (green, blue, red, white)
         
