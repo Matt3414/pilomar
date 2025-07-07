@@ -2572,7 +2572,7 @@ class microcontroller(attributemaster):
         Creating an instance of this object is not enough to initiate communication.
         - You must then call the 'initiate()' method to kick things off.
 
-                mctl = microcontroller(port='/dev/serial0',resetpin=Parameters.MctlResetPin,boardtype=Parameters.BoardType) # Create communication with microcontroller over uart0 serial port.
+                mctl = microcontroller(port='/dev/ttyS0',resetpin=Parameters.MctlResetPin,boardtype=Parameters.BoardType) # Create communication with microcontroller over uart0 serial port.
                 mctl.Log = MainLog.Log # Tell which Logging function to use for main logfile messages.
                 mctl.Initiate() # Initiate communication.
         """
@@ -2620,7 +2620,7 @@ class microcontroller(attributemaster):
         """ List serial ports to log file and terminal. """
         self.ListSerialPorts(terminal=True)
         
-    def __init__(self,port='/dev/serial0',resetpin=6,boardtype=None,logger=None):
+    def __init__(self,port='/dev/ttyS0',resetpin=6,boardtype=None,logger=None):
         """ 
             port = serial port to use for UART communication. 
             resetpin = pin used to control reset or power for the microcontroller. 
@@ -3141,7 +3141,7 @@ UartControlQueue = Queue() # Command queue to the CommsLoop, use this to shut it
 def SystemUARTPort():
     """ Return the suggested UART port based upon the RPi model. """
     if Hardware.rpi_num in ['3','4','CM4']: # The software can use the default UART port depending upon the RPi model.
-        port='/dev/serial0'
+        port='/dev/ttyS0'
     else:
         port='/dev/ttyAMA0'
     return port
