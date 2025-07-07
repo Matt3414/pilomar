@@ -2745,7 +2745,7 @@ class microcontroller(attributemaster):
         authority = AskYesNo("No safety checks. Do you want to turn ON GPIO power for the microcontroller [y/N]?",False,fg=textcolor.BLACK,bg=textcolor.ORANGERED1)
         if authority:
             self.Log("microcontroller.PowerOn(): No safety checks. GPIO POWER PIN turned on for Microcontroller.",terminal=True)
-            self.ResetPin.Off()
+            self.ResetPin.On()
 
     def PowerOff(self):
         """ Overrides all safeties, turns power GPIO power pin off for microcontroller. """
@@ -2756,7 +2756,7 @@ class microcontroller(attributemaster):
         if authority:
             self.Log("microcontroller.PowerOff(): No safety checks. GPIO POWER PIN turned off for Microcontroller.",terminal=True)
             self.Log("microcontroller.PowerOff(): Note: If the messagehandler is still running, it will restart the microcontroller automatically.",terminal=True)
-            self.ResetPin.On()
+            self.ResetPin.Off()
 
     def PowerIsOn(self):
         """ Return TRUE if power is on, FALSE otherwise. 
